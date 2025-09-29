@@ -1,0 +1,114 @@
+/*----------------------------------------------------------------- */
+/* object/project/_access.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-access{
+    position: relative;
+    width: 100%;
+    min-height: 177vw;
+
+    @include foundation.breakpoint(tablet){
+        min-height: 49vw;
+    }
+
+    @include foundation.breakpoint(pc){
+        min-height: 33vw;
+    }
+
+    &__mask--dark{
+        position: absolute;
+        inset: 0;
+        z-index: foundation.$z-access-mask-dark;
+        background-color: foundation.$color-mask;
+    }
+
+    &__map{
+        position: absolute;
+        inset: 0;
+        z-index: foundation.$z-access-map;
+
+        & iframe{
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
+    }
+
+    &__mask--darker{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: foundation.$z-access-mask-darker;
+        background-color: foundation.$color-mask;
+        opacity: 0.29;
+        width: 100%;
+        height: 60.0%;
+
+        @include foundation.breakpoint(tablet){
+            height: 100%;
+        }
+
+        @include foundation.breakpoint(pc){
+            width: 61.2%;
+        }
+    }
+
+    &__top-layer{
+        position: relative; //z-indexで最上層にするために設定。absoluteだと親要素に高さが反映されたないためrelativeに。
+        z-index: foundation.$z-access-top-layer;
+        width: 100%;
+        height: auto;
+        padding: 13.2% 10.7% 15.2% 10.7%;
+
+        @include foundation.breakpoint(tablet){
+            padding: 5.9% 5.0% 4.8% 3.5%;
+        }
+
+        @include foundation.breakpoint(pc){
+            width: 61.2%;
+            padding: 6.1% 7.7% 4.8% 8.6%;
+        }
+    }
+
+    &__heading-wrapper{
+        margin-bottom: 4.7%;
+
+        @include foundation.breakpoint(tablet){
+            margin-bottom: 1.8%
+        }
+
+        @include foundation.breakpoint(pc){
+            margin-bottom: 8.4%
+        }
+    }
+
+    &__heading{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(30);
+        font-weight: foundation.$font-weight-bold;
+        margin-bottom: 20.5px;
+
+        @include  foundation.breakpoint(pc){
+            margin-bottom: 57px;
+        }
+    }
+
+    &__heading-underline{
+        background-color: foundation.$color-background-underline;
+        width: 75px;
+        height: 2px;
+    }
+
+    &__text{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(14);
+        font-weight: foundation.$font-weight-bold;
+        line-height: 2.4;
+
+        @include  foundation.breakpoint(pc){
+            font-size: foundation.font-size-rem(16);
+            line-height: 2.1;
+        }
+    }
+}

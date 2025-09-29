@@ -1,0 +1,294 @@
+/*----------------------------------------------------------------- */
+/* object/project/_wp-block.scss
+/*----------------------------------------------------------------- */
+//「wp-block-library/style.min.css」（ユーザーが投稿した記事のブロックについてのCSS）
+// に対してカスタマイズを加える
+
+@use "../../foundation/foundation";
+
+/* h2 */
+h2.wp-block-heading {
+    margin-top: 4.0rem;
+    margin-bottom: 2.8rem;
+
+    @include foundation.breakpoint(tablet) {
+        margin-top: 4.8rem;
+        margin-bottom: 2.4rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-top: 7.2rem;
+        margin-bottom: 2.4rem;
+    }
+}
+
+/* h3 */
+h3.wp-block-heading {
+    margin-top: 3.6rem;
+    margin-bottom: 2.4rem;
+
+    @include foundation.breakpoint(tablet) {
+        margin-top: 4.4rem;
+        margin-bottom: 2.0rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-top: 6.8rem;
+        margin-bottom: 2.0rem;
+    }
+}
+
+/* h4 */
+h4.wp-block-heading {
+    margin-top: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+/* h5 */
+h5.wp-block-heading {
+    margin-top: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+/* h6 */
+h6.wp-block-heading {
+    margin-top: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+/* table */
+.wp-block-table{
+    border-collapse: collapse;
+    margin-top: 2.0rem; //余白（ブロックが2つ続いたときに繋がらないように）
+    margin-bottom: 2.0rem;
+  
+    td, th{
+        line-height: 1.5;
+        padding-top: 2.8rem;
+        padding-right: 2.3rem;
+        padding-bottom: 2.3rem;
+        padding-left: 2.3rem;
+        border: solid 1px foundation.$color-border-sub;
+
+        @include foundation.breakpoint(tablet){
+            padding-right: 3.0rem;
+            padding-left: 3.0rem;                
+        }
+    }
+}
+
+/* ul */
+ul.wp-block-list {
+    line-height: 1.5;
+    list-style: none;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+
+    @include foundation.breakpoint(tablet){
+        margin-right: 5.0rem;
+        margin-left: 5.0rem;
+    }
+
+    //第2階層
+    ul {
+        margin-left: 1.8rem;
+    }
+
+    ol {
+        margin-left: calc(1.2em + 1.8rem);     
+    }
+}
+
+/* ol */
+ol.wp-block-list {
+    line-height: 1.5;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    margin-left: 1.2em; // そのままだとリスト本体を基準に余白が設定されて数字の部分がはみ出してしまうため。 
+    
+    @include foundation.breakpoint(tablet){
+        margin-right: 5.0rem;
+        margin-left: calc(1.2em + 5.0rem);
+    }
+
+    //第2階層
+    ol {
+        margin-left: 1.2em;
+    }
+
+    ul {
+        // ulでは数字の部分がずれている関係で、<ul>はmargin-leftを設定しなくてもインデントが設定されているように見える。
+
+        @include foundation.breakpoint(tablet){
+            margin-left: 0;
+        }
+    }
+}
+
+/* quote */
+.wp-block-quote{
+    font-size: foundation.font-size-rem(16);
+    line-height: 1.5;
+    background-color: foundation.$color-background-article-block;
+    border: none;
+    margin-top: 2.0rem; //余白（ブロックが2つ続いたときに繋がらないように）
+    margin-bottom: 2.0rem;
+    padding-top: 3.0rem;
+    padding-right: 1.6rem;
+    padding-bottom: 2.7rem;
+    padding-left: 2.0rem;
+
+    @include foundation.breakpoint(tablet){
+        padding-top: 5.0rem;
+        padding-right: 5.6rem;
+        padding-bottom: 5.7rem;
+        padding-left: 5.0rem;        
+    }
+
+    @include foundation.breakpoint(pc){
+        padding-top: 5.0rem;
+        padding-right: 6.0rem;
+        padding-bottom: 4.7rem;
+        padding-left: 5.0rem;        
+    }
+
+    cite{
+        font-size: foundation.font-size-rem(16);
+        font-style: normal;
+
+        @include foundation.breakpoint(tablet){
+            margin-top: 5.2rem;
+        }
+    }
+
+    a{
+        color: foundation.$color-link;
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+}
+
+/* image */
+.wp-block-image{
+    margin-top: 2.0rem;  //余白（ブロックが2つ続いたときに繋がらないように）
+    margin-bottom: 2.0rem;
+}
+
+/* caption */
+.wp-element-caption {   // WordPress 5.0 以降 ブロックエディタ―用
+    font-size: foundation.font-size-rem(14);
+    max-width: 100%;
+    text-align: center;
+    margin: 0.8rem auto;
+}
+
+.wp-caption {   // クラッシックエディタ―用　テーマチェックが後方互換性を推奨しているため記載
+    max-width: 100%;
+    text-align: center;
+    margin: 0.8rem auto;
+}
+
+.wp-caption-text{   // クラッシックエディタ―用
+    font-size: foundation.font-size-rem(14);
+}
+
+.gallery-caption{   // クラッシックエディタ―用
+    font-size: foundation.font-size-rem(14);
+}
+
+/* メディアとテキスト */
+.wp-block-media-text{
+    gap: 1rem;
+    margin-top: 2.0rem;  //余白（ブロックが2つ続いたときに繋がらないように）
+    margin-bottom: 2.0rem;   
+
+    @include foundation.breakpoint(tablet){
+        gap: 2.1rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        gap: 4.0rem;
+    }  
+
+    & > .wp-block-media-text__content{
+        padding-right: 0;
+        padding-left: 0;
+
+    }
+}
+
+/* code */
+.wp-block-code{
+    line-height: 1.5;
+    background-color: foundation.$color-background-article-block;
+    padding-top: 5.0rem;
+    padding-right: 5.0rem;
+    padding-bottom: 5.0rem;
+    padding-left: 5.0rem;
+}
+
+/* button */
+.wp-block-buttons{
+    width: 100%;
+
+    @include foundation.breakpoint(tablet){
+        width: 429px;
+    } 
+}
+
+.wp-block-button{
+    width: 100%;
+}
+
+.wp-block-buttons> .wp-block-button{
+    margin-top: 2.0rem;  //余白（ブロックが2つ続いたときに繋がらないように）
+    margin-bottom: 2.0rem;
+}
+
+.wp-block-button__link{
+    color: inherit;
+    font-size: inherit;
+    font-weight: foundation.$font-weight-bold;
+    background: linear-gradient(
+        90deg, foundation.$color-gradation-light 0%, foundation.$color-gradation-dark 100%);
+    width: 100%;
+    height: 81px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1.6%; //ボタンの文字が中央から少しずれているため
+    border: 1px solid foundation.$color-border-sub;
+    border-radius: 20px;
+
+    @include foundation.breakpoint(tablet){
+        height: 104px;
+        padding-top: 2px;
+        padding-left: 0;
+    }
+}
+
+/* ハイライト */
+// register_block_style テーマチェック対応
+.is-style-highlight {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5em;
+    text-decoration-color: foundation.$color-text-highlight;
+    text-underline-offset: -0.5rem;
+    text-decoration-skip-ink: none;
+}
+
+/* 幅広ブロック */
+// テーマチェック対応
+.alignwide {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 全幅ブロック */
+// テーマチェック対応
+.alignfull {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}

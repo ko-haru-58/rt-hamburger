@@ -1,0 +1,64 @@
+/*----------------------------------------------------------------- */
+/* foundation/_variables.scss
+/*----------------------------------------------------------------- */
+
+/* font-weight */
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+
+/* color */
+//カラーネーム140色はそちらの名前を採用。そのほかの色には「light」「dark」をつけている。
+$clr-black: #000000;
+$clr-gray-dark: #707070;
+$clr-gray: #808080;
+$clr-gray-light: #ABABAB;
+$clr-gray-lighter: #F2EDE9;
+$clr-brown-darker: #3C2B1C;
+$clr-brown-dark:#3C2A10;
+$clr-orange-light: #FFF7EF;
+$clr-darkblue-light:#4A6C9B;
+$clr-whitesmoke-darker: #DED8D3;
+$clr-whitesmoke-dark: #F2EDE9;
+$clr-whitesmoke: #F5F5F5;
+$clr-white-darker: #EAEAEA;
+$clr-white-dark: #FFFDFA;
+$clr-white: #FFFFFF;
+$clr-lightpink: #FFB6C1;
+
+
+$color-base: $clr-white-dark;
+$color-text: $clr-brown-dark;
+$color-text-sub: $clr-gray-dark;
+$color-text-white: $clr-white;
+$color-text-highlight: $clr-lightpink;
+$color-link: $clr-darkblue-light;
+$color-background: $clr-brown-dark;
+$color-background-white: $clr-white;
+$color-background-underline: $clr-white;
+$color-background-header: $clr-orange-light;
+$color-background-sidebar: $clr-gray-lighter;
+$color-background-article-block: $clr-whitesmoke;
+$color-background-pagination: $clr-brown-darker;
+$color-background-noimage: $clr-gray-light;
+$color-gradation-light:$clr-whitesmoke-dark;
+$color-gradation-dark: $clr-whitesmoke-darker;
+$color-border: $clr-gray;
+$color-border-sub: $clr-gray-dark;
+$color-mask: $clr-black;
+
+/* z-index */
+$z-close-button: 5500;
+$z-menu: 5000;
+$z-menu-overlay: 4500;
+$z-top-right: 2500;
+$z-header: 2000;
+$z-search-icon-circle: 520;
+$z-search-icon-border: 500;
+$z-access-top-layer: 380;
+$z-access-mask-darker: 360;
+$z-access-map: 340;
+$z-access-mask-dark: 320;
+
+/* 管理バーの高さ */
+$admin-bar-high: 46px;
+$admin-bar-low: 32px;

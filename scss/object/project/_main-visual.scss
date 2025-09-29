@@ -1,0 +1,188 @@
+/*----------------------------------------------------------------- */
+/* object/project/_main-visual.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-main-visual{
+    position: relative;
+    width: 100%;
+
+    &--archive{
+        background-color: foundation.$color-mask;
+    }
+
+    &__image{
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1.6rem;
+    }
+
+    &--front &__image{
+        background-image: url('../images/main-visual-default.jpg');
+        aspect-ratio: 25 / 19;
+
+        @include foundation.breakpoint(tablet){
+            aspect-ratio: 29 / 10;
+        }     
+    }
+
+    &--archive &__image{
+        opacity: 0.5;
+        background-image: url('../images/main-visual-archive_sp.jpg');
+        aspect-ratio: 25 / 19;
+
+        @include foundation.breakpoint(tablet){
+            background-image: url('../images/main-visual-archive_tab.jpg');
+            aspect-ratio: 29 / 10;
+        }
+
+        @include foundation.breakpoint(pc){
+            background-image: url('../images/main-visual-archive_pc.jpg');
+            aspect-ratio: 97 / 15;
+        }        
+    }    
+    
+    &--single &__image, &--page &__image{
+        aspect-ratio: 5 / 3;
+        opacity: 1.0;
+
+        @include foundation.breakpoint(pc){
+            aspect-ratio: 31 / 10;
+        }        
+    }
+
+    &__mask{
+        background-color: foundation.$color-background;
+        opacity: 0.7;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--front &__title{
+        position: absolute;
+        top: 52.1%; //文字は中央から少しずれている
+        right: 6.7%;
+        left: 6.7%;
+        transform: translateY(-50%);
+
+        @include foundation.breakpoint(tablet) {
+            font-size: foundation.font-size-rem(36);
+            right: 10.3%;
+            left: 10.3%;
+        }
+
+        @include foundation.breakpoint(pc) {
+            top: 49.7%;
+            right: 5.5%;
+            left: 5.5%;
+            font-size: foundation.font-size-rem(40);
+        }
+    }
+
+    &--single &__title{
+        position: absolute;
+        top: 53.3%;
+        right: 6.9%;
+        left: 6.9%;
+        transform: translateY(-50%);
+
+        @include foundation.breakpoint(tablet) {
+            top: 51.4%;
+            right: 10.3%;
+            left: 10.3%;
+        }
+
+        @include foundation.breakpoint(pc) {
+            top: 51.5%;
+            right: 5.5%;
+            left: 5.5%;
+        }
+    }
+
+    &--page &__title{
+        position: absolute;
+        top: 53.3%;
+        right: 12.0%;
+        left: 12.0%;
+        transform: translateY(-50%);
+
+        @include foundation.breakpoint(tablet) {
+            top: 51.4%;
+            right: 10.3%;
+            left: 10.3%;
+        }
+
+        @include foundation.breakpoint(pc) {
+            top: 51.5%;
+            right: 5.5%;
+            left: 5.5%;
+        }
+    }
+
+    &--single &__title, &--page &__title{
+        text-shadow: 1px 1px 2px rgba(foundation.$color-mask, 0.5);
+    }
+
+    &--archive &__title{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        top: 50.9%;
+        left: 9.9%;
+        transform: translateY(-50%);
+        height: 71px;
+
+        @include foundation.breakpoint(tablet){
+            flex-direction: row;
+            align-items:flex-end;
+            top: 50.0%;
+            left: 10.3%;
+            height: auto;
+        }
+
+        @include foundation.breakpoint(pc){
+            top: 49.4%;
+            left: 5.5%;
+        } 
+    }
+
+    &--archive &__subtitle{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(16);
+        font-weight: foundation.$font-weight-bold;
+        line-height: 1.0;
+
+        @include foundation.breakpoint(tablet){
+            margin-bottom: 17px;
+            margin-left: 2.0rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            margin-bottom: 14px;
+        }
+    }
+
+    &__title.no-thumbnail{
+        color: foundation.$color-text;
+        margin-top: 3.0rem;
+        margin-bottom: 2.4rem;
+        margin-left: 1.0rem;
+
+        @include foundation.breakpoint(tablet) {
+            margin-top: 3.6rem;
+            margin-bottom: 2.4rem;
+            margin-left: 3.0rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            margin-top: 4.0rem;
+            margin-bottom: 2.4rem;
+            margin-left: 5.0rem;
+        }        
+    }
+
+}

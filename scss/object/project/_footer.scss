@@ -1,0 +1,47 @@
+/*----------------------------------------------------------------- */
+/* object/project/_footer.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @include foundation.breakpoint(tablet) {
+        padding-top: 30px;
+        padding-bottom: 24px;
+    }
+
+    @include foundation.breakpoint(pc) {
+        padding-top: 41px;
+        padding-bottom: 27px;
+    }
+
+    &__list{
+        display: flex;
+    }
+
+    &__list .menu-item > a{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(18);
+
+        @include foundation.breakpoint(tablet) {
+            font-size: foundation.font-size-rem(20);
+        } 
+    }
+
+    &__list .menu-item:not(:last-child)::after {
+        content: "｜";
+        color: foundation.$color-text-white;
+    }
+
+    &__copylight{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(14);
+    }
+}

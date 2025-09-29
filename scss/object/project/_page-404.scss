@@ -1,0 +1,97 @@
+/*----------------------------------------------------------------- */
+/* object/project/_page-404.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-404 {
+  &__wrapper {
+    margin-right: 2.0rem;
+    margin-bottom: 7.3rem;
+    margin-left: 2.0rem;
+
+    @include foundation.breakpoint(tablet){
+        margin-right: 6.0rem;
+        margin-bottom: 15.3rem;
+        margin-left: 6.0rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-right: 10.0rem;
+        margin-bottom: 27.8rem;
+        margin-left: 10.0rem;
+    }
+  }
+
+  
+  &__title {
+    color: foundation.$color-text;
+    font-size: foundation.font-size-rem(28) ;
+    margin-top: 3.0rem;
+    margin-bottom: 2.0rem;
+    
+    @include foundation.breakpoint(tablet) {
+      font-size: foundation.font-size-rem(36) ;
+      margin-top: 4.0rem;
+      margin-bottom: 2.4rem;      
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-top: 5.0rem;
+        margin-bottom: 2.8rem;
+    }    
+  }
+
+  &__text{
+    line-height: 2.0;
+  }
+
+  &__button-wrapper {
+    margin-top: 2.4rem;
+    margin-bottom: 5.2rem;
+
+    @include foundation.breakpoint(tablet){
+      margin-top: 2.8rem;
+      margin-bottom: 6.4rem;
+    }
+
+    @include foundation.breakpoint(pc){
+      margin-top: 4.0rem;
+      margin-bottom: 8.0rem;
+    }
+  }
+
+  &__button {
+    background-color: foundation.$color-background;
+    color: foundation.$color-text-white;
+    width: 180px;
+
+    @include foundation.breakpoint(pc){
+      width: 320px;
+      height: 60px;
+    }
+  }
+  
+  &__search-wrapper{
+    margin-top: 1.6rem;
+
+    @include foundation.breakpoint(tablet){
+      margin-top: 2.0rem;
+    }
+
+    @include foundation.breakpoint(pc){
+      margin-top: 2.8rem;
+    }    
+  }
+  
+  &__search-form{
+    width: 100%;
+    max-width: 320px;
+
+    @include foundation.breakpoint(tablet){
+      width: 500px;
+      max-width: none;
+    }
+  }
+
+}
+

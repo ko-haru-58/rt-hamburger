@@ -1,0 +1,22 @@
+/*----------------------------------------------------------------- */
+/* object/project/_p-page-links.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-page-links{
+    display: flex;
+    justify-content: center;
+    margin-right: 2.0rem;
+    margin-left: 2.0rem;
+
+    @include foundation.breakpoint(tablet){
+        margin-right: 6.0rem;
+        margin-left: 6.0rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-right: 10.0rem;
+        margin-left: 10.0rem;         
+    }
+}
+

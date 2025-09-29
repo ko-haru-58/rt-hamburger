@@ -1,0 +1,34 @@
+/*----------------------------------------------------------------- */
+/* object/project/_menu-cards.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-menu-cards{
+    margin-top: 1.6rem;
+    margin-right: 2.0rem;
+    margin-left: 2.0rem;
+
+    @include foundation.breakpoint(tablet){
+        margin-top: 3.2rem;
+        margin-right: 3.5rem;
+        margin-left: 4.2rem;        
+    }
+    
+    @include foundation.breakpoint(pc){
+        margin-top: 6.6rem;
+        margin-right: 10.0rem;
+        margin-left: 10.0rem; 
+    }
+}
+
+.p-menu-card{
+    margin-bottom: 2.0rem;
+
+    @include foundation.breakpoint(pc){
+        margin-bottom: 3.0rem;
+    }    
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}

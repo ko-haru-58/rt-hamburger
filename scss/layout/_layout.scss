@@ -1,0 +1,72 @@
+/*----------------------------------------------------------------- */
+/* layout/_layout.scss
+/*----------------------------------------------------------------- */
+@use "../foundation/foundation";
+
+.l-header{
+    grid-area: head;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 217px;
+    z-index: foundation.$z-header;
+    background-color: foundation.$color-background-header;
+
+    @include foundation.breakpoint(pc){
+        width: 80.8%;
+    }
+}
+
+.l-main{
+    grid-area: main;
+    // 背景色は「カスタマイズ」→「色」から選択
+}
+
+.l-sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: foundation.$z-menu;
+    background-color: foundation.$color-background-sidebar;
+    width: 87.5vw;
+    max-width: 367px;
+    height: 100vh;  //メニューにスクロールバーを表示するため
+    overflow-y: auto;   //メニューにスクロールバーを表示するため
+    transform: translateX(100%);    //初期状態は画面の右に出して非表示にする
+    transition: all 0.3s ease;
+    
+    @include foundation.breakpoint(pc) {
+        position: static;
+        transform: translateX(0);
+        grid-area: side;
+        width: auto;
+        max-width: none;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    &.open{
+        transform: translateX(0);
+    }
+}
+
+.l-footer{
+    grid-area: foot;
+    background-image: url("../images/footer.jpg");
+    overflow: hidden;
+}
+
+// 管理バーとヘッダーが重なってしまい一部が隠れてしまうので、ヘッダーをずらす
+body.admin-bar #wpadminbar {
+  position: fixed;
+  top: 0;
+}
+
+body.admin-bar .l-header {
+    top: foundation.$admin-bar-high;
+
+    @include foundation.breakpoint(admin-bar) {
+        top: foundation.$admin-bar-low;
+    }  
+}

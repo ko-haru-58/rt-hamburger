@@ -1,0 +1,99 @@
+/*----------------------------------------------------------------- */
+/* foundation/_base.scss
+/*----------------------------------------------------------------- */
+@use "foundation" ;
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+    color:foundation.$color-text;
+    font-family: "Roboto", "M PLUS 1p", sans-serif;
+    font-size: foundation.font-size-rem(16);
+    font-weight: foundation.$font-weight-regular;
+    line-height: 1.0;
+
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 215px 1fr 150px;
+    grid-template-areas:
+        "head"
+        "main"
+        "foot";
+
+    @include foundation.breakpoint(tablet) {
+        grid-template-rows: 217px 1fr 150px;
+    }
+
+    @include foundation.breakpoint(pc) {
+        grid-template-columns: 1fr 19.2% ;
+        grid-template-rows: 217px 1fr 150px;
+        grid-template-areas:
+            "head side"
+            "main side"
+            "foot foot";
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  color: foundation.$color-text-white;
+  font-size: foundation.font-size-rem(36) ;
+
+  @include foundation.breakpoint(tablet) {
+    font-size: foundation.font-size-rem(60) ;
+  }
+}
+
+h2 {
+  font-size: foundation.font-size-rem(28) ;
+
+  @include foundation.breakpoint(tablet) {
+    font-size: foundation.font-size-rem(36) ;
+  }
+}
+
+h3 {
+  font-size: foundation.font-size-rem(24) ;
+
+  @include foundation.breakpoint(tablet) {
+    font-size: foundation.font-size-rem(28) ;
+  }
+}
+
+h4 {
+  font-size: foundation.font-size-rem(20) ;
+}
+
+h5 {
+  font-size: foundation.font-size-rem(20) ;
+}
+
+h6 {
+  font-size: foundation.font-size-rem(20) ;
+}
+
+p {
+  line-height: 1.5;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul{
+  padding-left:0;
+  list-style: none;
+}
+
+img{
+  display: block;
+}
+

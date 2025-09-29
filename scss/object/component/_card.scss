@@ -1,0 +1,272 @@
+/*----------------------------------------------------------------- */
+/* object/component/_card.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.c-service-card{
+    background-size: cover; //background-imageは「_service-type.scss」で指定
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    min-height: 165vw;
+
+    @include foundation.breakpoint(tablet){
+        min-height: 80vw;
+    }
+
+    @include foundation.breakpoint(pc){
+        min-height: 62vw;
+    }
+
+    &__heading-wrapper{
+        padding-top: 4.9%;
+        padding-left: 4.5%;
+
+        @include foundation.breakpoint(tablet) {
+            padding-top: 5.0%;
+            padding-left: 3.1%;
+        }
+
+        @include foundation.breakpoint(pc) {
+            padding-top: 5.0%;
+            padding-left: 1.6%;
+        }
+    }
+
+    &__heading{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(41);
+        font-weight: foundation.$font-weight-bold;
+        padding-bottom: 18.8px;
+
+        @include foundation.breakpoint(tablet) {
+            font-size: foundation.font-size-rem(44);
+            padding-bottom: 25.6px;
+        }
+
+        @include foundation.breakpoint(pc) {
+            font-size: foundation.font-size-rem(80);
+            padding-bottom: 46px;
+        }
+    }
+
+    &__heading-underline{
+        background-color: foundation.$color-background-underline;
+        width: 33.9px;
+        height: 4px;
+        margin-left: 0.5px;
+
+        @include foundation.breakpoint(tablet) {
+            width: 35.9px;
+            margin-left: 4.1px;
+        }
+
+        @include foundation.breakpoint(pc) {
+            width: 63px;
+            margin-left: 7.5px;
+        }
+    }
+
+    &__text-wrapper{
+        padding: 16px;
+    }
+
+    &__text-container{
+        background-color: foundation.$color-background-white;
+        opacity: 0.8;
+        min-height: 40vw;
+        width: 100%;
+        padding: 16px;
+        
+        @include foundation.breakpoint(tablet){
+            min-height: 18vw;
+        }
+
+        @include foundation.breakpoint(pc){
+            min-height: 8vw;
+        }
+        
+        &:first-child{
+            margin-bottom: 16px;
+        }
+    }
+
+    &__text--large{
+        font-size: foundation.font-size-rem(22);
+        font-weight: foundation.$font-weight-bold;
+        padding-bottom: 8px;
+
+        @include foundation.breakpoint(tablet) {
+            font-size: foundation.font-size-rem(24);
+            padding-bottom: 16px;
+        }
+
+        @include foundation.breakpoint(pc) {
+            padding-bottom: 10px;
+        }
+
+    }
+
+    &__text{
+        @include foundation.breakpoint(tablet) {
+            font-size: foundation.font-size-rem(14);
+        }
+
+        @include foundation.breakpoint(pc) {
+            font-size: foundation.font-size-rem(16);
+        }
+    }
+}
+
+.c-menu-card{
+    @include foundation.breakpoint(tablet){
+        display: flex;
+        width: 100%;
+        min-height: 300px;
+    }
+
+    @include foundation.breakpoint(pc){
+        min-height: 400px;
+    }
+
+    &__image{
+        width: 100%;
+        aspect-ratio: 168 / 115;
+        background-position: center;
+        background-repeat: no-repeat;          
+
+        @include foundation.breakpoint(tablet){
+            aspect-ratio: initial;
+            width: 50%;
+            flex-shrink: 0;
+        }        
+    }
+
+    &__image--thumbnail{
+        background-size: cover;        
+    }    
+
+    &__image--no-thumbnail{
+        background-color: foundation.$color-background-noimage;
+        background-size: 100% auto;
+    }
+
+    &__excerpt-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: foundation.$color-background;
+        padding-top: 3.6rem;
+        padding-bottom: 4.4rem;
+
+        @include foundation.breakpoint(tablet){
+            width: 50%;
+            padding-top: 3.6rem;
+            padding-bottom: 4.0rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            padding-top: 6.5rem;
+            padding-bottom: 6.0rem;
+        }
+    }
+
+    &__heading{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(20);
+        margin-right: 1.7rem;
+        margin-bottom: 2.2rem;
+        margin-left: 1.7rem;
+
+        @include foundation.breakpoint(tablet){
+            margin-right: 5.9rem;
+            margin-left: 3.5rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            font-size: foundation.font-size-rem(36);
+            margin-right: 10.4rem;
+            margin-bottom: 4.4rem;
+            margin-left: 6.3rem;
+        }
+    }
+
+    &__sub-heading{
+        color: foundation.$color-text-white;
+        font-size: foundation.font-size-rem(16);
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        margin-right: 1.7rem;
+        margin-left: 1.7rem;
+
+        @include foundation.breakpoint(tablet){
+            margin-right: 5.9rem;
+            margin-left: 3.5rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            font-size: foundation.font-size-rem(24);
+            padding-top: 1.4rem;
+            padding-bottom: 1.4rem;
+            margin-right: 10.4rem;
+            margin-left: 6.3rem;
+        }
+    }
+
+    &__text{
+        color: foundation.$color-text-white;
+        margin-right: 1.7rem;
+        margin-left: 1.7rem;
+
+        @include foundation.breakpoint(tablet){
+            margin-right: 5.9rem;
+            margin-left: 3.5rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            margin-right: 10.4rem;
+            margin-left: 6.3rem;
+        }
+    }
+
+    &__button-wrapper{
+        display: flex;
+        justify-content: center;
+        padding-right: 2.1%;    //ボタンが真ん中から少しずれているので調整
+        margin-top: 3.2rem;
+
+        @include foundation.breakpoint(tablet){
+            padding-right: 0;
+            padding-left: 2.0%;
+            margin-top: 3.6rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            padding-right: 0;
+            padding-left: 1.9%;
+            margin-top: 5.6rem;
+        }
+    }
+
+    &__button{
+        color: foundation.$color-text-sub;
+        background-color: foundation.$color-background-white;
+        width: 163px;
+
+        @include foundation.breakpoint(pc){
+            width: 292px;
+        }
+    }
+}
+
+.sticky{    // テーマチェックの「.sticky CSS クラスが推奨されます」の対応
+    & .c-menu-card{
+        &__heading{
+            text-decoration: underline;
+        }
+    }
+}

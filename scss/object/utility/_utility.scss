@@ -1,0 +1,53 @@
+/*----------------------------------------------------------------- */
+/* object/utility/_utility.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+/* スクロール不可 */
+.u-no-scroll {
+  // スマホ・タブレットでメニューが前面に表示されているときにメニューだけスクロールする
+  overflow: hidden;
+  height: 100%;
+}
+
+/* 配置 */
+.alignright {
+    float: right;
+}
+
+.alignleft {
+    float: left;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* スクリーンリーダー */
+.screen-reader-text {
+  // スクリーンリーダー専用テキストは非表示にしておく
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.screen-reader-text:focus {
+  // キーボード操作でフォーカスした場合は見えるようにする 
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  clip-path: none;
+  overflow: visible;
+  white-space: normal;
+}

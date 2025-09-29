@@ -1,0 +1,77 @@
+/*----------------------------------------------------------------- */
+/* object/component/_paginavi.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.wp-pagenavi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: foundation.$color-text-sub;
+    width: 100%;
+
+    @include foundation.breakpoint(tablet){
+        width: auto;
+    }
+
+    & .pages{
+        display: none;
+
+        @include foundation.breakpoint(tablet){
+            display: block;
+            font-weight: foundation.$font-weight-bold;
+            margin-right: 19px;            
+        }
+    }
+    
+    & .page, & .current{
+        display: none;
+
+        @include foundation.breakpoint(tablet){
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            font-weight: foundation.$font-weight-bold;
+            width: 35px;
+            height: 35px;
+            border: 1px solid foundation.$color-border-sub;
+        }
+    }
+
+    & .current {
+        @include foundation.breakpoint(tablet){
+            color: foundation.$color-text-white;
+            background-color: foundation.$color-background;
+        }
+    }    
+
+    /* 前へ、次へ */
+    & .previouspostslink, & .nextpostslink{
+        font-size: foundation.font-size-rem(17);
+
+        @include foundation.breakpoint(tablet){
+            display: none;
+        }
+    }
+
+    /* 次へ */
+    & .nextpostslink{
+        margin-left: auto;  //「前へ」がないときにも、左端ではなく右端に表示するための設定。
+    }
+
+    /* 最初へ、最後へ */
+    & .first, & .last{
+        display: none;
+
+        @include foundation.breakpoint(tablet){
+            display: flex;
+            font-size: foundation.font-size-rem(17);
+        }
+    }
+
+    /* 「前へ…」「次へ…」の「…」（非表示） */
+    & .extend{
+        display: none;
+    }
+}

@@ -1,0 +1,94 @@
+/*----------------------------------------------------------------- */
+/* object/component/_search-form.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.c-search-form {
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        height: 46px;
+    }
+
+    &__input-wrap{
+        position: relative; //虫眼鏡アイコンを疑似要素で設置するための設定
+        flex-grow: 1;
+        margin-right: 3.8%;
+
+        @include foundation.breakpoint(tablet) {
+            margin-right: 2.6%;
+        }
+
+        // 虫眼鏡アイコンの疑似要素
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+        }
+
+        &::before {
+            top: 11px;
+            left: 5px;
+            z-index: foundation.$z-search-icon-circle;
+            width: 20px;
+            height: 20px;
+            background-color: foundation.$color-background-white;
+            border: 2px solid foundation.$color-border;
+            border-radius: 50%;
+
+            @include foundation.breakpoint(tablet) {
+                left: 12px;
+            }
+        }
+
+        &::after { 
+            left: 14px; // ::beforeのleft 5px + （アイコンの幅24px - 線の長さが15px） = 14px のところに線の左端を配置するとアイコンは24pxになる 
+            bottom: 11px;
+            transform: rotate(45deg);
+            transform-origin: right bottom; //leftとbottomでアイコンの右下に配置している。右下を起点に45°回転させる。
+            z-index: foundation.$z-search-icon-border;
+            background-color: foundation.$color-border;
+            width: 15px;    //虫眼鏡アイコンが24px。ブラウザによって少しずれてもよいように長めに15pxにしている。長くなった分は円の背景に隠れる。
+            height: 2px;
+
+            @include foundation.breakpoint(tablet) {
+                left: calc(12px + 9px);
+            }
+        }
+    }
+
+    &__input {
+        background-color: foundation.$color-background-white;
+        width: 100%;
+        height: 100%;
+        font-size: foundation.font-size-rem(16);
+        font-weight: foundation.$font-weight-bold;
+        border: 1px solid foundation.$color-border-sub;
+        border-radius: 10px 8px 10px 10px;
+        padding-left: 34px; //虫眼鏡アイコンの表示領域には文字を入力できないように余白を設定
+        padding-right: 5px;
+
+        @include foundation.breakpoint(tablet) {
+            border-radius: 10px;
+            padding-left: 48px;
+            padding-right: 12px;
+        }
+    }
+
+    &__button { 
+        background: linear-gradient(
+            90deg, foundation.$color-gradation-light 0%, foundation.$color-gradation-dark 100%);
+        color: foundation.$color-text-sub;
+        font-size: foundation.font-size-rem(16);
+        font-weight: foundation.$font-weight-bold;
+        width: 90px;
+        height: 100%;
+        border: 1px solid foundation.$color-border-sub;
+        border-radius: 10px;
+
+        @include foundation.breakpoint(tablet) {
+            width: 136px;
+        }
+    }
+}

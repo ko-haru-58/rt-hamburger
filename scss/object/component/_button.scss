@@ -1,0 +1,20 @@
+/*----------------------------------------------------------------- */
+/* object/component/_button.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.c-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: foundation.$font-weight-bold;
+    
+    height: 42px;
+    border-radius: 21px;
+
+    @include foundation.breakpoint(pc){
+        width: 292px;
+        height: 76px;
+        border-radius: 38px;
+    }
+}

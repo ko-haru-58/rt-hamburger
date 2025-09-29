@@ -1,0 +1,19 @@
+/*----------------------------------------------------------------- */
+/* foundation/_ress-fix.scss
+/*----------------------------------------------------------------- */
+// ress.scss で表示されるベンダープレフィックスの警告メッセージを消すために作成
+
+[type=search] {
+    appearance: textfield;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+    appearance: button;
+}
+
+select {
+    appearance: none;
+}

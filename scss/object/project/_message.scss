@@ -1,0 +1,21 @@
+/*----------------------------------------------------------------- */
+/* object/project/_message.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-message--no-articles{
+    font-size: foundation.font-size-rem(18);
+    margin-top: 2.4rem;
+    margin-right: 2.0rem;
+    margin-left: 2.0rem;
+
+    @include foundation.breakpoint(tablet){
+        margin-right: 3.5rem;
+        margin-left: 4.2rem;
+    }
+
+    @include foundation.breakpoint(pc){
+        margin-right: 10.0rem;
+        margin-left: 10.0rem;            
+    }    
+}    

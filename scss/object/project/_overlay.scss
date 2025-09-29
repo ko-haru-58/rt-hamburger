@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------- */
+/* object/project/_overlay.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: foundation.$z-menu-overlay;
+    width: 100vw;
+    height: 100vh;
+    background-color: foundation.$color-mask;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.is-active {
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    @include foundation.breakpoint(pc){
+        display: none;
+    }
+}

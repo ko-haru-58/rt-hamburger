@@ -1,0 +1,98 @@
+/*----------------------------------------------------------------- */
+/* object/project/_service-type.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-service-type{
+    @include foundation.breakpoint(tablet) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    &-item{
+        @include foundation.breakpoint(tablet){
+            width: 42.8%;
+        }
+
+        @include foundation.breakpoint(pc){
+            width: 39.7%;
+        }
+
+        &:nth-child(1){
+            margin-top: 5.3%;
+            margin-bottom: 5.3%;
+            margin-right: 5.3%;
+            margin-left: 5.3%;
+            
+            @include foundation.breakpoint(tablet) {
+                margin-top: 4.8%;
+                margin-bottom: 4.8%;
+                margin-right: 4.8%;
+                margin-left: 4.8%;
+            }
+
+            @include foundation.breakpoint(pc) {
+                margin-top: 7.7%;
+                margin-bottom: 8.4%;
+                margin-right: 5.2%;
+                margin-left: 7.7%;
+            }
+        }
+
+        &:nth-child(2){
+            margin-top: 0;
+            margin-bottom: 13.1%;
+            margin-right: 5.3%;
+            margin-left: 5.3%;
+            
+            @include foundation.breakpoint(tablet) {
+                margin-top: 4.8%;
+                margin-bottom: 4.8%;
+                margin-right: 4.8%;
+                margin-left: 0;
+            }
+
+            @include foundation.breakpoint(pc){
+                margin-top: 7.7%;
+                margin-bottom: 8.4%;
+                margin-right: 7.7%;
+                margin-left: 0;
+            }
+
+        }
+    }
+
+    &-item--take-out{
+        & .c-service-card{
+            background-image: url("../images/take-out_sp.jpg");
+
+            @include foundation.breakpoint(tablet){
+                background-image: url("../images/take-out_tab.jpg");
+            }
+
+            @include foundation.breakpoint(pc){
+                background-image: url("../images/take-out_pc.jpg");
+            }
+        }
+
+        & .c-service-card__heading{
+            color: foundation.$clr-white-darker; //背景のお皿の色を考慮しているのか、この箇所だけ利用されている白色
+        }
+    }
+
+    &-item--eat-in{
+        & .c-service-card{
+            background-image: url("../images/eat-in_sp.jpg");
+
+            @include foundation.breakpoint(tablet){
+                background-image: url("../images/eat-in_tab.jpg");
+            }
+
+            @include foundation.breakpoint(pc){
+                background-image: url("../images/eat-in_pc.jpg");
+            }
+        }
+    }
+}

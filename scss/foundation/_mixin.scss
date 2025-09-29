@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------- */
+/* foundation/_mixin.scss
+/*----------------------------------------------------------------- */
+
+// --- メディアクエリ　レスポンシブデザイン対応 ---
+@mixin breakpoint($point){
+    @if $point == tablet {
+        @media screen and (min-width: 768px){
+            @content ;
+        }
+    }
+
+    @if $point == admin-bar {
+        // 管理バーが表示されている場合に管理バーの高さが変わるポイント
+        @media screen and (min-width: 783px){
+            @content ;
+        }
+    }
+
+    @if $point == pc {
+        @media screen and (min-width: 1280px){
+            @content ;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+/*----------------------------------------------------------------- */
+/* object/project/_article.scss
+/*----------------------------------------------------------------- */
+@use "../../foundation/foundation";
+
+.p-article{
+        padding-bottom: 5.3rem;
+
+        @include foundation.breakpoint(tablet){
+            padding-bottom: 10.0rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            padding-bottom: 19.8rem;
+        }        
+
+    &__content{
+        margin-right: 2.0rem;
+        margin-bottom: 2.0rem;
+        margin-left: 2.0rem;
+
+        @include foundation.breakpoint(tablet){
+            margin-right: 6.0rem;
+            margin-bottom: 5.4rem;
+            margin-left: 6.0rem;
+        }
+
+        @include foundation.breakpoint(pc){
+            margin-right: 10.0rem;
+            margin-bottom: 8.0rem;
+            margin-left: 10.0rem;
+        }
+    }
+}
+
+// 投稿者によるコメントはスタイルを変更する（テーマチェック対応）
+.bypostauthor {
+    background-color: foundation.$color-background-article-block;
+}
