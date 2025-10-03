@@ -165,24 +165,4 @@
             margin-bottom: 14px;
         }
     }
-
-    &__title.no-thumbnail{
-        color: foundation.$color-text;
-        margin-top: 3.0rem;
-        margin-bottom: 2.4rem;
-        margin-left: 1.0rem;
-
-        @include foundation.breakpoint(tablet) {
-            margin-top: 3.6rem;
-            margin-bottom: 2.4rem;
-            margin-left: 3.0rem;
-        }
-
-        @include foundation.breakpoint(pc){
-            margin-top: 4.0rem;
-            margin-bottom: 2.4rem;
-            margin-left: 5.0rem;
-        }        
-    }
-
 }

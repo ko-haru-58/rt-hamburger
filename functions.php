@@ -245,7 +245,7 @@ add_action( 'after_setup_theme', 'rtburger_theme_support' );
 // 以下、仕様にはない設定だが、テーマチェックのメッセージを消すために記載したもの
 
 // ウィジェットエリアの登録（テーマチェック対応のため中身は空）
-function mytheme_widgets_init() {
+function rtburger_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'サイドバー', 'rt-hamburger' ),
         'id'            => 'sidebar-1',
@@ -255,7 +255,7 @@ function mytheme_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 }
-add_action( 'widgets_init', 'mytheme_widgets_init' );
+add_action( 'widgets_init', 'rtburger_widgets_init' );
 
 // 通常コメント一覧の最後にあるフォームを、返信ボタンを押した所に表示するためのスクリプト
 function rtburger_comment_reply_script() {
